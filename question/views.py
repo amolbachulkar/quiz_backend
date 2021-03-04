@@ -15,7 +15,7 @@ def QuestionById(request, question_id):
         try:
             question = Question.objects.get(pk=question_id)
             serializer = QuestionSerializer(question,)
-            return Response(serializer.data,status=201)
+            return Response(serializer.data,status=200)
         except Question.DoesNotExist as dne:
             return Response({}, status=404)
         except Exception as e:

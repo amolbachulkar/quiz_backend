@@ -16,7 +16,7 @@ def QuizById(request, quiz_id):
         try:
             quiz = Quiz.objects.get(pk=quiz_id)
             serializer = QuizSerializer(quiz,)
-            return Response(serializer.data,status=201)
+            return Response(serializer.data,status=200)
         except Quiz.DoesNotExist as dne:
             return Response({}, status=404)
         except Exception as e:
@@ -69,7 +69,7 @@ def QuizQuestions(request, quiz_id):
             quiz = QuizSerializer(Quiz.objects.get(pk=quiz_id)).data
             questions = QuestionSerializer(Question.objects.filter(quiz=quiz_id), many=True).data
             quiz['questions'] =questions
-            return Response(quiz,status=201)
+            return Response(quiz,status=200)
         except Quiz.DoesNotExist as dne:
             return Response({}, status=404)
         except Exception as e:

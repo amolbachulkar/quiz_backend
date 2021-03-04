@@ -25,11 +25,11 @@ from question.views import QuestionById,QuestionSave
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    url(r'^api/quiz-questions/(?P<quiz_id>.+)/$', QuizQuestions),
-    url(r'^api/quiz/(?P<quiz_id>.+)/$', QuizById),
+    url(r'^api/quiz-questions/(?P<quiz_id>.+)$', QuizQuestions),
+    url(r'^api/quiz/(?P<quiz_id>.+)$', QuizById),
     url(r'^api/quiz', QuizSave),
 
-    url(r'^api/questions/(?P<question_id>.+)/$', QuestionById),
+    url(r'^api/questions/(?P<question_id>.+)$', QuestionById),
     url(r'^api/questions', QuestionSave),
 
 
